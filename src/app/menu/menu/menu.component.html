@@ -19,6 +19,10 @@
                     <mat-icon color="accent">add</mat-icon>
                     Agregar alumno
                 </a>
+                <a mat-list-item routerLinkItem="active" routerLink="verAlumnos">
+                    <mat-icon color="primary">perm_identity</mat-icon>
+                    Ver Alumnos
+                </a>
             </mat-nav-list>
             <mat-accordion>
                 <mat-expansion-panel>
@@ -39,7 +43,7 @@
             </mat-accordion>
         </mat-sidenav>
         <mat-sidenav-container class="padding-10">
-            <!-- <router-outlet></router-outlet> -->
+            <router-outlet></router-outlet>
         </mat-sidenav-container>
     </mat-sidenav-container>
 </div>
