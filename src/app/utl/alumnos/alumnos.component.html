@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header">
+        Lista Alumnos IEVN
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">
+                Filtrar por:
+            </div>
+            <div class="col-md-4">
+                <input [(ngModel)]="listFilter" type="text" class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Filtro: {{listFilter}}</h3>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table"*ngIf="alumnoIevn.length">
+                    <thead>
+                        <tr>
+                            <!-- <th><button (click)="showImage()" class="btn btn-primary" type="button">
+                                {{muestraImg?'Oculta ':'Muestra '}}Imagen
+                            </button></th> -->
+                            <th>Matricula </th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let alumno of dataSource | alumnosFilter:listFilter">
+                            <td>{{alumno.matricula}}</td>
+                            <td>{{alumno.nombre|uppercase}}</td>
+                            <td>{{alumno.apaterno}}</td>
+                            <td>{{alumno.amaterno}}</td>
+                            <td>{{alumno.correo}}</td>
+
+                            <td><button mat-flat-button color="primary" routerLink="['/Editar', alumno.matricula]">Editar</button></td>
+
+                            <!-- <td>
+                                <img *ngIf="muestraImg" [src]="producto.imagenUrl"
+                                [title]="producto.Modelo"
+                                [style.width.px]="imagenWidth"
+                                [style.margin.px]="imagenMargin"
+                                >
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
